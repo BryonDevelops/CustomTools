@@ -1,5 +1,3 @@
-# CustomTools
-
 [Color Key](https://www.notion.so/bbc11130f5684d91b0cbd6eea1d42755)
 
 Notes:
@@ -14,7 +12,19 @@ I like to add a src folder just to look better. Also you could add another folde
 
 Project References:
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88fa0c56-4664-4419-a404-5b82a4149c5f/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88fa0c56-4664-4419-a404-5b82a4149c5f/Capture.png)
+- AutoMapper
+- AutoMapper.Extensions.Microsoft.DependencyInjection
+- AutoQueryable.AspNetCore.Filter
+- AutoWrapper.Core
+- AutoWrapper.Server
+- Dapper
+- MediatR
+- MediatR.Extensions.Microsoft.DependencyInjection
+- Microsoft.AspNetCore.Authentication.JwtBearer
+- Newtonsoft.Json
+- Swashbuckle.AspNetCore
+- System.Data.SqlClient
+- Telerik.UI.for.AspNet.Core
 
 - [ ]  Create new Folder called [Your Project Name]Project
 - [ ]  Create new [ASP.Net](http://asp.Net) Core Web App Project
@@ -221,11 +231,11 @@ namespace [Your Project].Controllers.V1
     public class [Your Model]Controller : Controller
     {
         private readonly IMediator _mediator;
-        private readonly ILoggedInUserInfoRepository _loggedInUserInfoRepository;
-        public [Your Model]Controller(IMediator mediator, ILoggedInUserInfoRepository loggedInUserInfoRepository)
+        private readonly IUserRepository _userRepository;
+        public [Your Model]Controller(IMediator mediator, IUserRepository userRepository)
         {
             this._mediator = mediator;
-            _loggedInUserInfoRepository = loggedInUserInfoRepository;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
@@ -431,9 +441,11 @@ namespace [Your Project].Controllers.V1
     </html>
     ```
 
+---
+
 [Your Project Name].Api.Common Structure:
 
-- [ ]  
+- [ ]  Add Folder called Exceptions(Place whatever exceptions you want in here)
 
 ---
 
@@ -441,26 +453,157 @@ namespace [Your Project].Controllers.V1
 
 [Your Project Name].Data.Access Structure:
 
-- [ ]  
+**Project Packages:**
+
+- AutoMapper.Extensions.Microsoft.DependencyInjection
+- Dapper
+- FluentValidation.AspNetCore
+- Microsoft.Extensions.Configuration
+- Microsoft.Extensions.Logging
+- System.Data.SqlClient
+
+- [ ]  Create DependencyInjection.cs:
+
+```csharp
+public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+{
+    services.AddTransient<I[Your Model]Repository, [Your Model]Repository>();
+    services.AddTransient<IUserRepository, UserRepository>();
+    services.AddTransient<IUnitOfWork, UnitOfWork>();
+    return services;
+}
+```
+
+- [ ]  Create Constants and, DAL Folders
+    - [ ]  Inside of DAL Create DTOs, Interfaces, and Repositories Folders
+        - [ ]  Inside of DTOs Create folders for your Model and Users
+            - [ ]  Inside of your Model folder add a DTO for your Model called [Your Model]Dto
+
+                A DTO(Data Transfer Object) is what will be shown on the Frontend of the application and lets you only show the properties that you want. 
+
+            - [ ]  Add a Folder called Users for your UserDto
+        - [ ]  Inside the Interfaces Folder:
+            - [ ]  Add I[Your Model]Repository.cs:
+
+            ```csharp
+            public interface I[Your Model]Repository: IRepository<[Your Model]Dto>
+            {
+                Task<IEnumerable<[Your Model]Dto>> GetAllAsync();
+            }
+            ```
+
+            - [ ]  Add IGenericRepository.cs:
+
+            ```csharp
+            public interface IGenericRepository<T> where T : class
+            {
+                Task<List<T>> Get(string searchText);
+                Task<List<T>> GetAll();
+
+                Task<int> Create(T entity);
+                Task<int> Delete(int id);
+                Task<int> Update(int entity);
+            }
+            ```
+
+            - [ ]  Add IUserRepository.cs:
+
+            ```csharp
+            public interface IUserRepository
+            {
+                Task<List<User>> Get(string impersonateUser, string loggedInUser);
+            }
+            ```
+
+            - [ ]  Add IRepository.cs:
+
+            ```csharp
+            public interface IRepository<T>
+            {
+                Task<IEnumerable<T>> GetAllAsync();
+            }
+            ```
+
+            - [ ]  Add IUnitOfWork.cs:
+
+            ```csharp
+            public interface IUnitOfWork
+            {
+                I[Your Model]Repository [Your Model] { get; }
+            }
+            ```
+
+        - [ ]  Inside the Repositories Folder:
+            - [ ]  Add [Your Model]Repository.cs:
+
+            ```csharp
+            public class [Your Model]Repository : I[Your Model]Repository
+            {
+                private readonly ILogger<[Your Model]Repository> _logger;
+                private readonly IDbConnection _dbConnection;
+
+                public [Your Model]Repository(ILogger<[Your Model]Repository> logger, IDbConnection connection)
+                {
+                    _logger = logger;
+                    _dbConnection = connection;
+                }
+
+                public async Task<IEnumerable<[Your Model]Dto>> GetAllAsync()
+                {
+                    return await _dbConnection.QueryAsync<[Your Model]Dto>("[Your SP Here]", commandType: CommandType.StoredProcedure);
+                }
+
+            }
+            ```
 
 ---
 
 ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d9d436a4-1263-4d1e-89c8-c5df4116a7f2/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d9d436a4-1263-4d1e-89c8-c5df4116a7f2/Capture.png)
 
-Project Packages:
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/466ca750-f6b5-4dee-8685-061b70e87f3d/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/466ca750-f6b5-4dee-8685-061b70e87f3d/Capture.png)
-
 ---
 
 [Your Project Name].Data.Models Structure:
 
-- [ ]  
+- [ ]  Create Models for [Your Model], Role, User, and UserRole
+    - [ ]  Role:
 
----
+    ```csharp
+    public class Role
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+    ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dd7d6f32-8806-425e-85a7-9bad20a27c2d/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dd7d6f32-8806-425e-85a7-9bad20a27c2d/Capture.png)
+    - [ ]  User:
 
-[Your Project Name].Queries Structure:
+    ```csharp
+    public class User
+    {
+      public string NtId { get; set; }
+      public string LastName { get; set; }
+      public string FirstName { get; set; }
+      public string Email { get; set; }
+      public string Phone { get; set; }
+      public string Ext { get; set; }
+      public bool Active { get; set; }
+      public string CreatedBy { get; set; }
+      public DateTime CreatedDate { get; set; } = DateTime.Now;
+      public bool IsDeleted { get; set; }
 
-- [ ]
+      public virtual IList<UserRole> Roles { get; set; }
+    }
+    ```
+
+    - [ ]  UserRole:
+
+    ```csharp
+    public class UserRole
+    {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
+        public int RoleId { get; set; }
+        public virtual Role Role { get; set; }
+    }
+    ```
