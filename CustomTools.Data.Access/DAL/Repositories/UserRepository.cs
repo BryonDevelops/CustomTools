@@ -14,13 +14,13 @@ using Microsoft.Extensions.Logging;
 
 namespace CustomTools.Data.Access.DAL.Repositories
 {
-    public class LoggedInUserInfoRepository : ILoggedInUserInfoRepository
+    public class UserRepository : IUserRepository
     {
 
-        private readonly ILogger<LoggedInUserInfoRepository> _logger;
+        private readonly ILogger<UserRepository> _logger;
         private readonly IDbConnection _dbConnection;
 
-        public LoggedInUserInfoRepository(ILogger<LoggedInUserInfoRepository> logger, IDbConnection connection)
+        public UserRepository(ILogger<UserRepository> logger, IDbConnection connection)
         {
             _logger = logger;
             _dbConnection = connection;

@@ -7,7 +7,7 @@ using CustomTools.Data.Models;
 
 namespace CustomTools.Queries.Interfaces
 {
-    interface ICustomersQueryProcessor
+    public interface ICustomersQueryProcessor
     {
         IQueryable<Customer> Get();
         Customer Get(int id);

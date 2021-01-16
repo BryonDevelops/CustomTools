@@ -10,6 +10,5 @@ namespace CustomTools.Data.Access.DAL.Interfaces
     public interface IUnitOfWork
     {
         ICustomerRepository Customers { get; }
-        ILoggedInUserInfoRepository LoggedInUserInfo { get; }
     }
 }

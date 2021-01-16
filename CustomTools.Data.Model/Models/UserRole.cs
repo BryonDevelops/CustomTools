@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CustomTools.Data.Models.Models;
 
-namespace CustomTools.Data.Models
+namespace CustomTools.Data.Models.Models
 {
     public class UserRole
     {

@@ -13,7 +13,7 @@ namespace CustomTools.Data.Access
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddTransient<ICustomerRepository, CustomerRepository>();
-            services.AddTransient<ILoggedInUserInfoRepository, LoggedInUserInfoRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }

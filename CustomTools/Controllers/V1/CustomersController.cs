@@ -20,8 +20,8 @@ namespace CustomTools.Controllers.V1
     public class CustomersController : Controller
     {
         private readonly IMediator _mediator;
-        private readonly ILoggedInUserInfoRepository _loggedInUserInfoRepository;
-        public CustomersController(IMediator mediator, ILoggedInUserInfoRepository loggedInUserInfoRepository)
+        private readonly IUserRepository _loggedInUserInfoRepository;
+        public CustomersController(IMediator mediator, IUserRepository loggedInUserInfoRepository)
         {
             this._mediator = mediator;
             _loggedInUserInfoRepository = loggedInUserInfoRepository;

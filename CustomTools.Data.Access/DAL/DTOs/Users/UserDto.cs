@@ -4,12 +4,11 @@ using System.Text;
 
 namespace CustomTools.Data.Access.DAL.DTOs.Users
 {
-    public class LoggedInUserInfoDto
+    public class UserDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string NTID { get; set; }
-
     }
 }

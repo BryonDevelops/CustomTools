@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace CustomTools.Data.Access.DAL.Interfaces
 {
-    public interface ILoggedInUserInfoRepository
+    public interface IUserRepository
     {
-        //Task<List<LoggedInUserInfo>> Get(string impersonateUser, string loggedInUser);
+        //Task<List<User>> Get(string impersonateUser, string loggedInUser);
     }
 }

@@ -25,7 +25,6 @@
     <ProjectReference Include="..\CustomTools.Api.Common\CustomTools.Api.Common.csproj" />
     <ProjectReference Include="..\CustomTools.Data.Access\CustomTools.Data.Access.csproj" />
     <ProjectReference Include="..\CustomTools.Data.Model\CustomTools.Data.Models.csproj" />
-    <ProjectReference Include="..\CustomTools.Queries\CustomTools.Queries.csproj" />
   </ItemGroup>
 
 </Project>

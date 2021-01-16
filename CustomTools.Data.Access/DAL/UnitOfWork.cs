@@ -7,13 +7,13 @@ namespace CustomTools.Data.Access.DAL
 {
     public class UnitOfWork: IUnitOfWork
     {
-        public UnitOfWork(ICustomerRepository customerRepository, ILoggedInUserInfoRepository loggedInUserInfoRepository)
+        public UnitOfWork(ICustomerRepository customerRepository, IUserRepository loggedInUserInfoRepository)
         {
             Customers = customerRepository;
             LoggedInUserInfo = loggedInUserInfoRepository;
         }
 
         public ICustomerRepository Customers { get; }
-        public ILoggedInUserInfoRepository LoggedInUserInfo { get; }
+        public IUserRepository LoggedInUserInfo { get; }
     }
 }
