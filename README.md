@@ -1,3 +1,7 @@
+ASP.Net Core 5.0 Project Setup Instructions w/ Web API
+
+For best viewing use the link below which will take you to the Notion Project.
+
 Link to Notion: https://www.notion.so/ASP-Net-Core-5-0-Project-Setup-Instructions-w-Web-API-67320e489f374ca28e81f1374b912bff
 
 [Color Key](https://www.notion.so/bbc11130f5684d91b0cbd6eea1d42755)
