@@ -1,3 +1,5 @@
+Link to Notion: https://www.notion.so/ASP-Net-Core-5-0-Project-Setup-Instructions-w-Web-API-67320e489f374ca28e81f1374b912bff
+
 [Color Key](https://www.notion.so/bbc11130f5684d91b0cbd6eea1d42755)
 
 Notes:
@@ -5,8 +7,6 @@ Notes:
 *In this specific project the Name of the project is CustomTools. Replace that with whatever your project is named. Furthermore while following this guide you will see Brackets([]). In these brackets will be something along the lines of [Your Project Name]. This is just a placeholder and you need to put your Project Name there in this case CustomTools.*
 
 **Project Creation:**
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb3218c2-373e-45c0-824d-8c91dcf07b1c/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb3218c2-373e-45c0-824d-8c91dcf07b1c/Capture.png)
 
 I like to add a src folder just to look better. Also you could add another folder for testing if you wanted.
 
@@ -40,8 +40,6 @@ Project References:
     - [ ]  Name it [Your Project Name].Data.Models
 
 ---
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/77ce7701-9da9-42c0-9457-8f10467227ee/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/77ce7701-9da9-42c0-9457-8f10467227ee/Capture.png)
 
 Main Project Folder Structure
 
@@ -277,8 +275,6 @@ namespace [Your Project].Controllers.V1
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e76d912-93dc-4f5f-803d-cfeba623a86b/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e76d912-93dc-4f5f-803d-cfeba623a86b/Capture.png)
-
 - [ ]  In [Your Model]/Queries Add Folder called GetAll[Your Model]:
     - [ ]  Add GetAll[Your Model]Query.cs:
 
@@ -449,8 +445,6 @@ namespace [Your Project].Controllers.V1
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f8f42c5a-d030-42a7-9a1d-1714343baae4/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f8f42c5a-d030-42a7-9a1d-1714343baae4/Capture.png)
-
 [Your Project Name].Data.Access Structure:
 
 **Project Packages:**
@@ -555,10 +549,6 @@ public static IServiceCollection AddInfrastructure(this IServiceCollection servi
 
             }
             ```
-
----
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d9d436a4-1263-4d1e-89c8-c5df4116a7f2/Capture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d9d436a4-1263-4d1e-89c8-c5df4116a7f2/Capture.png)
 
 ---
 
