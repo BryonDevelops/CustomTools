@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomTools.Data.Models.Models
 {
-    public class User
+    public class UserModel
     {
         public int Id { get; set; }
         public string NtId { get; set; }
@@ -17,6 +17,6 @@ namespace CustomTools.Data.Models.Models
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-        public virtual IList<UserRole> Roles { get; set; }
+        public virtual IList<UserRoleModel> Roles { get; set; }
     }
 }

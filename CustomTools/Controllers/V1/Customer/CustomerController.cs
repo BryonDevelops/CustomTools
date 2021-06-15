@@ -5,9 +5,10 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoWrapper.Wrappers;
-using CustomTools.Customers.Queries.GetAllCustomers;
+using CustomTools.Api.Queries.Customer.GetAllCustomers;
 using CustomTools.Data.Access.DAL.DTOs.Customers;
 using CustomTools.Data.Access.DAL.Interfaces;
+using CustomTools.Data.Access.DAL.Interfaces.User;
 using CustomTools.Data.Models;
 using CustomTools.Data.Models.Models;
 using Kendo.Mvc.Extensions;
@@ -15,13 +16,13 @@ using Kendo.Mvc.UI;
 using MediatR;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
-namespace CustomTools.Controllers.V1
+namespace CustomTools.Api.Controllers.V1.Customer
 {
-    public class CustomersController : Controller
+    public class CustomerController : Controller
     {
         private readonly IMediator _mediator;
         private readonly IUserRepository _loggedInUserInfoRepository;
-        public CustomersController(IMediator mediator, IUserRepository loggedInUserInfoRepository)
+        public CustomerController(IMediator mediator, IUserRepository loggedInUserInfoRepository)
         {
             this._mediator = mediator;
             _loggedInUserInfoRepository = loggedInUserInfoRepository;
@@ -32,7 +33,8 @@ namespace CustomTools.Controllers.V1
         {
             if (User.Identity.IsAuthenticated)
             {
-                return View("~/Pages/Index.cshtml");
+                Console.WriteLine("HERE");
+                return View("/Pages/Index.cshtml");
             }
 
             return RedirectToAction("NotAuthorized");
@@ -40,7 +42,7 @@ namespace CustomTools.Controllers.V1
 
         public IActionResult NotAuthorized()
         {
-            return View("~/Pages/Customers/NotAuthorized.cshtml");
+            return View("/Pages/Shared/NotAuthorized.cshtml");
         }
 
         public async Task<JsonResult> GetAllCustomers([DataSourceRequest] DataSourceRequest request)

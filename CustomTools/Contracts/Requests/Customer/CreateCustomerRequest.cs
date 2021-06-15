@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace CustomTools.Data.Models
+﻿namespace CustomTools.Api.Contracts.Requests.Customers
 {
-    public class Customer
+    public class CreateCustomerRequest
     {
+        public int SapCustomerId { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public bool MarkedForDeletion { get; set; }

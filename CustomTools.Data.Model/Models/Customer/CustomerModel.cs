@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CustomTools.Contracts.Responses.Customers
+﻿namespace CustomTools.Data.Models.Models
 {
-    public class CustomerResponse
+    public class CustomerModel
     {
-        public int SapCustomerId { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public bool MarkedForDeletion { get; set; }

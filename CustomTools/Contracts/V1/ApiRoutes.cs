@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CustomTools.Contracts.V1
+﻿namespace CustomTools.Api.Contracts.V1
 {
     public static class ApiRoutes
     {
@@ -24,6 +19,19 @@ namespace CustomTools.Contracts.V1
             public const string Get = Base + "/customers/{customerId}";
 
             public const string Create = Base + "/customers";
+        }
+
+        public static class Sustainability
+        {
+            public const string GetAll = Base + "/sustainabilities";
+
+            public const string Update = Base + "/sustainability/{sustainabilityId}";
+
+            public const string Delete = Base + "/sustainability/{sustainabilityId}";
+
+            public const string Get = Base + "/sustainability/{sustainabilityId}";
+
+            public const string Create = Base + "/sustainabilities";
         }
     }
 }

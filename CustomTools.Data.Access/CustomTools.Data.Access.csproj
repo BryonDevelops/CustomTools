@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <Folder Include="Constants\" />
+    <Folder Include="DAL\DTOs\Supplement\" />
+    <Folder Include="DAL\Interfaces\Supplement\" />
+    <Folder Include="DAL\Repositories\Supplement\" />
   </ItemGroup>
 
   <ItemGroup>

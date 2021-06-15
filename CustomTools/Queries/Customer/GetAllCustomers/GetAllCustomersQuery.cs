@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using CustomTools.Data.Access;
-using CustomTools.Data.Access.DAL;
 using CustomTools.Data.Access.DAL.DTOs.Customers;
-using CustomTools.Data.Access.DAL.Interfaces;
+using CustomTools.Data.Access.DAL.Interfaces.Customer;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace CustomTools.Customers.Queries.GetAllCustomers
+namespace CustomTools.Api.Queries.Customer.GetAllCustomers
 {
     public class GetAllCustomersQuery : IRequest<IEnumerable<CustomerDto>>
     {

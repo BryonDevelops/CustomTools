@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CustomTools.Data.Access.DAL;
-using CustomTools.Data.Access.DAL.DTOs.Customers;
-using CustomTools.Data.Access.DAL.Interfaces;
-using Dapper;
-using Microsoft.Extensions.Configuration;
+﻿using System.Data;
+using CustomTools.Data.Access.DAL.Interfaces.User;
 using Microsoft.Extensions.Logging;
 
-namespace CustomTools.Data.Access.DAL.Repositories
+namespace CustomTools.Data.Access.DAL.Repositories.User
 {
     public class UserRepository : IUserRepository
     {

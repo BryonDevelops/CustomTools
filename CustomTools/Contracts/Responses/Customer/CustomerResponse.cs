@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CustomTools.Contracts.Requests.Customers
+﻿namespace CustomTools.Api.Contracts.Responses.Customers
 {
-    public class CreateCustomerRequest
+    public class CustomerResponse
     {
         public int SapCustomerId { get; set; }
         public int CustomerId { get; set; }

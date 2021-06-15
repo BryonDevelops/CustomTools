@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomTools", "CustomTools.csproj", "{EA9EEB4A-2A5D-4DBD-8622-193CA5F35843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomTools.Api", "CustomTools.Api.csproj", "{EA9EEB4A-2A5D-4DBD-8622-193CA5F35843}"
 	ProjectSection(ProjectDependencies) = postProject
 		{125D8577-64E0-4069-8DB4-4905640424A5} = {125D8577-64E0-4069-8DB4-4905640424A5}
 		{5067528A-304E-42E4-8691-5AB39E8B2840} = {5067528A-304E-42E4-8691-5AB39E8B2840}

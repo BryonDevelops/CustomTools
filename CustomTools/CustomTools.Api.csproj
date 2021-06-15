@@ -27,4 +27,13 @@
     <ProjectReference Include="..\CustomTools.Data.Model\CustomTools.Data.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\Requests\Supplement\" />
+    <Folder Include="Contracts\Responses\Supplement\" />
+    <Folder Include="Controllers\V1\Supplement\" />
+    <Folder Include="Pages\Customer\" />
+    <Folder Include="Pages\Supplement\" />
+    <Folder Include="Queries\Supplement\" />
+  </ItemGroup>
+
 </Project>
